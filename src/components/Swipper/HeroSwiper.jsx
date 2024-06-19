@@ -30,7 +30,6 @@ const HeroSwiper = ({ slides = [], interval = 3000 }) => {
        
           <h3 className='text-3xl font-semibold'>{slide.title}</h3>
           <h3>{slide.description}</h3>
-          {/* <img src={slide.backgroundImage} alt="" className='absolute h-48 w-96 pl-10 pt-2' /> */}
           <button className='relative bg-blue-500 -bottom-6 -right-36 p-2 rounded-lg text-sm'>{slide.ctaText}</button>
           
        </div>

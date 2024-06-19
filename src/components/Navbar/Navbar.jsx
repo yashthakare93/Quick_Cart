@@ -13,10 +13,10 @@ const Navbar = () => {
           <p className="text-xl font-bold">QuickCart</p>
         </div>
         <ul className="flex space-x-6">
-          <li className={`cursor-pointer ${menu === "shop" ? 'scale-110 text-slate-900 text-xl' : ' hover:text-slate-900  '}`} onClick={() => { setMenu("shop") }}><Link to='/'> Shop</Link></li>
-          <li className={`cursor-pointer ${menu === "men" ? 'scale-110 text-slate-900 text-xl' : ' hover:text-slate-900  '}`} onClick={() => { setMenu("men") }}><Link to='/men'> Men</Link></li>
-          <li className={`cursor-pointer ${menu === "women" ? 'scale-110 text-slate-900 text-xl' : ' hover:text-slate-900  '}`} onClick={() => { setMenu("women") }}><Link to='/women'> Women</Link></li>
-          <li className={`cursor-pointer ${menu === "kids" ? 'scale-110 text-slate-900 text-xl' : ' hover:text-slate-900  '}`} onClick={() => { setMenu("kids") }}><Link to='/kids'> Kids</Link></li>
+          <li className={`cursor-pointer ${menu === "home" ? 'scale-110 text-slate-900 text-xl' : ' hover:text-slate-900  '}`} onClick={() => { setMenu("home") }}><Link to='/'> Home</Link></li>
+          <li className={`cursor-pointer ${menu === "products" ? 'scale-110 text-slate-900 text-xl' : ' hover:text-slate-900  '}`} onClick={() => { setMenu("products") }}><Link to='/products'> Products</Link></li>
+          <li className={`cursor-pointer ${menu === "contact" ? 'scale-110 text-slate-900 text-xl' : ' hover:text-slate-900  '}`} onClick={() => { setMenu("contact") }}><Link to='/contact'> Contact Us</Link></li>
+          <li className={`cursor-pointer ${menu === "about" ? 'scale-110 text-slate-900 text-xl' : ' hover:text-slate-900  '}`} onClick={() => { setMenu("about") }}><Link to='/about'> About Us</Link></li>
         </ul>
         <div className="flex items-center space-x-4 relative">
           <Link to='/login'><button className="px-6 py-2 bg-white  border-spacing-3 border-2 border-slate-300 rounded-3xl ">Login</button></Link>

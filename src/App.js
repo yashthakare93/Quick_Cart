@@ -1,33 +1,34 @@
 import './index.css';
-import Navbar from './components/Navbar/Navbar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Shop from './pages/Shop';
-import ShopCategory from './pages/ShopCategory';
+import Home from './pages/Home';
 import Product from './pages/Product';
 import Cart from './pages/Cart';
 import LoginSignup from './pages/LoginSignup';
-import Hero from './components/Hero/Hero';
+import Contact from './pages/Contact';
+import About from './pages/About';
+import Footer from './components/Footer/Footer';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Navbar />
+    <div className="flex flex-col min-h-screen  p-6">
+    <BrowserRouter>
+      <Navbar />
+      <main className="flex-grow">
         <Routes>
-          <Route path='/' element={<Shop/>} />
-          <Route path='/mens' element={<ShopCategory category="men"/>}  />
-          <Route path='/womens' element={<ShopCategory category="women"/>} />
-          <Route path='/kids' element={<ShopCategory category="kids"/>} />
-          <Route path='/product' element={<Product/>}>
-            <Route path=':productId' element={<Product/>} />
+          <Route path='/' element={<Home />} />
+          <Route path='/products' element={<Product />}>
+            <Route path=':productId' element={<Product />} />
           </Route>
-          <Route path='/cart' element={<Cart/>} />
-          <Route path='/login' element={<LoginSignup/>} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/cart' element={<Cart />} />
+          <Route path='/login' element={<LoginSignup />} />
         </Routes>
-        <Hero/>
-      </BrowserRouter>
-
-    </div>
+      </main>
+      <Footer />
+    </BrowserRouter>
+  </div>
   );
 }
 
