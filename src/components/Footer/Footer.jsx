@@ -15,9 +15,9 @@ const Footer = () => {
           <a href="/terms" className="hover:underline">Terms of Service</a>
         </div>
         <div className="flex space-x-4">
-          <a href="" className="hover:underline">Facebook</a>
-          <a href="" className="hover:underline">Twitter</a>
-          <a href="" className="hover:underline">Instagram</a>
+          <a href="/" className="hover:underline">Facebook</a>
+          <a href="/" className="hover:underline">Twitter</a>
+          <a href="/" className="hover:underline">Instagram</a>
         </div>
       </div>
     </footer>

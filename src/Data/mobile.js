@@ -1,7 +1,4 @@
-import m1 from '../components/Assets/mobile/samsunggalaxys21.jpeg'
 import m2 from '../components/Assets/mobile/iphone12.jpeg'
-import m3 from '../components/Assets/mobile/googlepixel5.jpeg'
-import m4 from '../components/Assets/mobile/oneplus9pro.jpeg'
 
 const mobileDeals = [
   {

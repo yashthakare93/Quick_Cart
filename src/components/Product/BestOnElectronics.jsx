@@ -1,9 +1,9 @@
 import React, { useContext, useState } from 'react';
-import { MobileDealsContext } from '../../context/MobileDealsContext';
+import { HeadphoneDealsContext } from '../../context/HeadphoneContext';
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 
-const MobileDeals = () => {
-    const mobileDeals = useContext(MobileDealsContext);
+const BestOnElectronics = () => {
+    const headphoneDeals = useContext(HeadphoneDealsContext);
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const handleNext = () => {
@@ -15,13 +15,13 @@ const MobileDeals = () => {
     };
 
     // Get the current 6 products
-    const currentProducts = mobileDeals.slice(currentIndex, currentIndex + 6);
+    const currentProducts = headphoneDeals.slice(currentIndex, currentIndex + 6);
 
     return (
-        <section className="py-6">
+        <section className="py-12">
             <div className="container mx-auto bg-white pb-4">
                 <div className="flex items-center justify-between p-3">
-                    <h2 className="text-2xl font-normal mb-2">Best Deals on Mobiles</h2>
+                    <h2 className="text-2xl font-mono mb-2">Best on Electronics</h2>
                     <div className="flex items-center gap-1">
                         <button
                             onClick={handlePrevious}
@@ -33,7 +33,7 @@ const MobileDeals = () => {
                         <button
                             onClick={handleNext}
                             className="p-2 rounded-full bg-gray-400 bg-opacity-30 "
-                            disabled={currentIndex + 6 >= mobileDeals.length}
+                            disabled={currentIndex + 6 >= headphoneDeals.length}
                         >
                             <FaArrowRight size={24} />
                         </button>
@@ -42,7 +42,7 @@ const MobileDeals = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 px-4">
                     {currentProducts.map((product) => (
                         <div key={product.id} className="rounded-lg p-4 text-center border-2">
-                            <img src={product.image} alt={product.name} className="w-full h-48 object-cover rounded-lg" />
+                            <img src={product.image} alt={product.name} className="w-full h-48 rounded-lg" />
                             <h3 className="mt-4 text-sm">{product.name}</h3>
                             <div className="mt-2 flex justify-center">
                                 <span className="text-md font-bold flex">
@@ -57,4 +57,4 @@ const MobileDeals = () => {
     );
 };
 
-export default MobileDeals;
+export default BestOnElectronics;
