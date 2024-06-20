@@ -25,7 +25,7 @@ const Hero = () => {
       },
     ];
     return (
-        <div className="grid grid-cols-1 md:grid-cols-3 h-auto md:h-[400px] gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-3 h-auto md:h-[400px] gap-5 ">
             <div className="relative flex flex-col justify-between bg-gray-200 bg-opacity-50 col-span-1 md:col-span-2 p-4 md:p-6 text-black">
                 <div className='z-10 md:pl-10 md:pt-10 pl-4'>
                 <p className="hidden md:grid text-sm md:text-lg mb-4 md:mb-6">Discover the latest trends in men's fashion.</p>

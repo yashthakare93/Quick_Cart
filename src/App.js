@@ -11,10 +11,10 @@ import Navbar from './components/Navbar/Navbar';
 
 function App() {
   return (
-    <div className="flex flex-col min-h-screen  p-6">
+    <div className="flex flex-col min-h-screen md:px-10 px-6 bg-zinc-100 ">
     <BrowserRouter>
       <Navbar />
-      <main className="flex-grow">
+      <main className="flex-grow pt-10">
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/products' element={<Product />}>

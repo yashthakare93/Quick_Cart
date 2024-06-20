@@ -18,7 +18,7 @@ const HeroSwiper = ({ slides = [], interval = 3000 }) => {
   }
 
   return (
-    <div className="relative w-full h-full overflow-hidden bg-zinc-300">
+    <div className="relative w-full h-full overflow-hidden bg-zinc-200">
     {slides.map((slide, index) => (
       <div
         key={index}
@@ -30,7 +30,7 @@ const HeroSwiper = ({ slides = [], interval = 3000 }) => {
        
           <h3 className='text-3xl font-semibold'>{slide.title}</h3>
           <h3>{slide.description}</h3>
-          <button className='relative bg-blue-500 -bottom-6 -right-36 p-2 rounded-lg text-sm'>{slide.ctaText}</button>
+          <button className='relative bg-yellow-200 -bottom-6 -right-36 p-2 rounded-lg text-sm'>{slide.ctaText}</button>
           
        </div>
       </div>

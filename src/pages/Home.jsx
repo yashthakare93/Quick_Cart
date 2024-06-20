@@ -1,18 +1,20 @@
 import React from 'react'
 import Hero from '../components/Hero/Hero'
 import Categories from '../components/Product/CategoryProducts'
-import Testimonials from '../components/Product/CustomerTestimonials'
-import FeaturedProducts from '../components/Product/FeatureProducts'
+import FeaturedProducts from '../components/Product/MobileDeals'
 import Newsletter from '../components/Product/NewsletterSubscription'
+import { MobileDealsProvider } from '../context/MobileDealsContext'
 
 const Shop = () => {
   return (
     <div>
+      <MobileDealsProvider>
       <Hero/>
       <FeaturedProducts />
       <Categories />
-      <Testimonials />
       <Newsletter />
+      </MobileDealsProvider>
+     
     </div>
   )
 }
