@@ -1,32 +1,40 @@
-
 import React from 'react';
 import Discount from './Discount';
-import Recommended from './Recommended';
-import SuggestedProducts from './SuggestedProducts';
-import BestGagetsAppliance from './BestGagetsAppliance';
+import SuggestedProduct from './SuggestedProducts';
+import RecommendedProduct from './Recommended'
+import BestGadgetsAppliance from './BestGagetsAppliance';
+import YouMayLike from './YouMayLike';
+import BestGiftCollection from './BestGiftCollection';
 
 const ItemGrid = () => {
   return (
-    <div className="flex flex-wrap -mx-2">
-      <div className="w-full sm:w-1/2 lg:w-1/3 px-2 mb-4">
-        <Discount/>
+    <div>
+      <div className="flex w-full gap-4 py-4">
+        <div className="w-1/3 ">
+          <Discount />
+        </div>
+        <div className="w-1/3 ">
+          <SuggestedProduct />
+        </div>
+        <div className="w-1/3 ">
+          <BestGadgetsAppliance />
+        </div>
+
       </div>
-      <div className="w-full sm:w-1/2 lg:w-1/3 px-2 mb-4">
-        <Recommended/>
+      <div className="flex w-full gap-4">
+      <div className="w-1/3 ">
+        <RecommendedProduct />
       </div>
-      <div className="w-full sm:w-1/2 lg:w-1/3 px-2 mb-4">
-        <Recommended />
+      <div className="w-1/3 ">
+        <BestGiftCollection />
       </div>
-      <div className="w-full sm:w-1/2 lg:w-1/3 px-2 mb-4">
-        <SuggestedProducts />
+      <div className="w-1/3 ">
+        <YouMayLike />
       </div>
-      <div className="w-full sm:w-1/2 lg:w-1/3 px-2 mb-4">
-        <SuggestedProducts />
       </div>
-      <div className="w-full sm:w-1/2 lg:w-1/3 px-2 mb-4">
-        <BestGagetsAppliance/>
-      </div>
+
     </div>
+
   );
 };
 

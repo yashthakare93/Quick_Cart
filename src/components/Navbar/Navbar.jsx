@@ -24,7 +24,7 @@ const Navbar = () => {
           <div className="absolute top-1 -right-2 bg-red-500 text-white rounded-full h-5 w-5 flex items-center justify-center text-xs">0</div>
         </div>
       </div>
-      <hr className="border-t-2 border-gray-200 mt-2 " />
+      {/* <hr className="border-t-2 border-gray-200 mt-2 " /> */}
     </>
   );
 }

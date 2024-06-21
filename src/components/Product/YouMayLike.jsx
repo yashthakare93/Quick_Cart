@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { HeadphoneDealsContext } from '../../context/HeadphoneContext';
 import { IoIosArrowForward } from 'react-icons/io';
 
-const YourComponent = () => {
+const YouMayLike = () => {
   const headphoneDeals = useContext(HeadphoneDealsContext);
   const items = headphoneDeals.slice(0, 3); // Assuming you want the first 3 items
 
@@ -12,7 +12,7 @@ const YourComponent = () => {
         <div className="absolute right-0 bottom-0 mr-4 mb-4">
           <IoIosArrowForward className="text-white w-6 h-6 bg-blue-600 rounded-full p-1" />
         </div>
-        <p className="font-normal text-2xl pb-4 pl-4">Recommended for you</p>
+        <p className="font-normal text-2xl pb-4 pl-4">You May Like...</p>
       </div>
       <hr className='pt-10' />
       
@@ -46,4 +46,4 @@ const YourComponent = () => {
   );
 };
 
-export default YourComponent;
+export default YouMayLike;

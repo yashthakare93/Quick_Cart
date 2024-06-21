@@ -9,6 +9,8 @@ import { HeadphoneDealsProvider } from '../context/HeadphoneContext'
 import SportHealthcare from '../components/Product/SportHealthcare'
 import { SportHealthcareProvider } from '../context/SportHealthcareContext'
 import ItemGrid from '../components/Product/ItemGrid'
+import BestFashionDeals from '../components/Product/BestFashionDeals'
+import { BestFashionDealsProvider } from '../context/FasionDealsContext'
 
 const Shop = () => {
   return (
@@ -25,7 +27,10 @@ const Shop = () => {
         <HeadphoneDeals />
         <ItemGrid/>
       </HeadphoneDealsProvider>
-      
+      <BestFashionDealsProvider>
+      <BestFashionDeals/>
+      </BestFashionDealsProvider>
+   
       <Categories />
 
       <Newsletter />
