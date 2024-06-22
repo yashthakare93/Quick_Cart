@@ -18,11 +18,11 @@ const Category = ({ onSelectCategory }) => {
               type="radio"
               className="form-radio text-blue-600"
               name="category"
-              value="All Products"
-              checked={selectedCategory === 'All Products'}
-              onChange={() => handleCategoryChange('All Products')}
+              value="All"
+              checked={selectedCategory === 'All '}
+              onChange={() => handleCategoryChange('All')}
             />
-            <span className="ml-2">All Products</span>
+            <span className="ml-2">All</span>
           </label>
         </li>
         <li className="mb-1">
@@ -44,11 +44,11 @@ const Category = ({ onSelectCategory }) => {
               type="radio"
               className="form-radio text-blue-600"
               name="category"
-              value="Home & Kitchen"
-              checked={selectedCategory === 'Home & Kitchen'}
-              onChange={() => handleCategoryChange('Home & Kitchen')}
+              value="Home"
+              checked={selectedCategory === 'Home'}
+              onChange={() => handleCategoryChange('Home')}
             />
-            <span className="ml-2">Home & Kitchen</span>
+            <span className="ml-2">Home</span>
           </label>
         </li>
         <li className="mb-1">
@@ -57,11 +57,11 @@ const Category = ({ onSelectCategory }) => {
               type="radio"
               className="form-radio text-blue-600"
               name="category"
-              value="Smartphone & Headphones"
-              checked={selectedCategory === 'Smartphone & Headphones'}
-              onChange={() => handleCategoryChange('Smartphone & Headphones')}
+              value="Smartphone "
+              checked={selectedCategory === 'Smartphone '}
+              onChange={() => handleCategoryChange('Smartphone ')}
             />
-            <span className="ml-2">Smartphone & Headphones</span>
+            <span className="ml-2">Smartphone</span>
           </label>
         </li>
         <li className="mb-1">
@@ -70,11 +70,11 @@ const Category = ({ onSelectCategory }) => {
               type="radio"
               className="form-radio text-blue-600"
               name="category"
-              value="Fashion & Beauty"
-              checked={selectedCategory === 'Fashion & Beauty'}
-              onChange={() => handleCategoryChange('Fashion & Beauty')}
+              value="Fashion"
+              checked={selectedCategory === 'Fashion'}
+              onChange={() => handleCategoryChange('Fashion')}
             />
-            <span className="ml-2">Fashion & Beauty</span>
+            <span className="ml-2">Fashion</span>
           </label>
         </li>
         <li className="mb-1">

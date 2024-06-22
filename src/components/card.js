@@ -7,15 +7,17 @@ const Card = ({ img, title, star, reviews, prevPrice, newPrice, company, color, 
       <img className="w-full h-36" src={img} alt={title} />
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{title}</div>
-        <div className="text-gray-700 text-base">{company}</div>
-        <div className="text-gray-600 text-sm">Color: {color}</div>
-        <div className="text-gray-600 text-sm">Category: {category}</div>
-        <div className="flex items-center">
+        <div className="flex items-center style={{ color: 'gold' }}">
           {star}
           <span className="ml-1">{reviews}</span>
         </div>
-        <div className="text-red-500 line-through">{prevPrice}</div>
-        <div className="text-green-500">{newPrice}</div>
+        <div className="text-gray-700 text-base">{company}</div>
+        <div className="text-gray-600 text-sm">Color: {color}</div>
+        <div className="text-gray-600 text-sm">Category: {category}</div>
+       <div className='flex'>
+       <div className="text-red-500 line-through mr-2">{prevPrice}</div>
+       <div className="text-green-500 ">{newPrice}</div>
+       </div>
       </div>
     </div>
   );
@@ -24,22 +26,23 @@ const Card = ({ img, title, star, reviews, prevPrice, newPrice, company, color, 
 const CardGrid = () => {
   return (
     <div className="grid grid-cols-4 gap-4 p-4">
-      {data.map((deal, index) => (
+    {data.map((product, index) => (
+      <div key={index}>
         <Card
-          key={index}
-          img={deal.img}
-          title={deal.title}
-          star={deal.star}
-          reviews={deal.reviews}
-          prevPrice={deal.prevPrice}
-          newPrice={deal.newPrice}
-          company={deal.company}
-          color={deal.color}
-          category={deal.category}
+          img={product.img}
+          title={product.title}
+          star={product.star}
+          reviews={product.reviews}
+          prevPrice={product.prevPrice}
+          newPrice={product.newPrice}
+          company={product.company}
+          color={product.color}
+          category={product.category}
         />
-      ))}
-    </div>
+      </div>
+    ))}
+  </div>
   );
 };
-
+  
 export default CardGrid;
