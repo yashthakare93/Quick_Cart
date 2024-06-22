@@ -1,21 +1,22 @@
 import React from 'react'
 import Hero from '../components/Hero/Hero'
-import Categories from '../components/Product/CategoryProducts'
-import MobileDeals from '../components/Product/MobileDeals'
-import Newsletter from '../components/Product/NewsletterSubscription'
+import Categories from '../Product/CategoryProducts'
+import MobileDeals from '../Product/MobileDeals'
+import Newsletter from '../Product/NewsletterSubscription'
 import { MobileDealsProvider } from '../context/MobileDealsContext'
-import HeadphoneDeals from '../components/Product/HeadphoneDeals'
+import HeadphoneDeals from '../Product/HeadphoneDeals'
 import { HeadphoneDealsProvider } from '../context/HeadphoneContext'
-import SportHealthcare from '../components/Product/SportHealthcare'
+import SportHealthcare from '../Product/SportHealthcare'
 import { SportHealthcareProvider } from '../context/SportHealthcareContext'
-import ItemGrid from '../components/Product/ItemGrid'
-import BestFashionDeals from '../components/Product/BestFashionDeals'
+import ItemGrid from '../Product/ItemGrid'
+import BestFashionDeals from '../Product/BestFashionDeals'
 import { BestFashionDealsProvider } from '../context/FasionDealsContext'
+import Navbar from '../components/Navbar/Navbar'
 
 const Shop = () => {
   return (
     <div>
-
+      <Navbar/>
       <Hero />
       <MobileDealsProvider>
         <MobileDeals />

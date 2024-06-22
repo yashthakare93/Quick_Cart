@@ -7,13 +7,13 @@ import LoginSignup from './pages/LoginSignup';
 import Contact from './pages/Contact';
 import About from './pages/About';
 import Footer from './components/Footer/Footer';
-import Navbar from './components/Navbar/Navbar';
+
 
 function App() {
   return (
-    <div className="flex flex-col min-h-screen md:px-5 px-6 bg-zinc-100 ">
+    <div className="flex flex-col min-h-screen md:px-5 px-6 bg-gray-50">
     <BrowserRouter>
-      <Navbar />
+    
       <main className="flex-grow pt-10">
         <Routes>
           <Route path='/' element={<Home />} />

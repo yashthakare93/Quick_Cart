@@ -5,6 +5,18 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [menu, setMenu] = useState("Shop");
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    // Handle the search logic here, e.g., redirecting to a search results page
+    console.log("Search query:", searchQuery);
+  };
+
   return (
     <>
       <div className="flex justify-around items-center p-4 bg-white-800 text-black">
@@ -18,6 +30,16 @@ const Navbar = () => {
           <li className={`cursor-pointer ${menu === "contact" ? 'scale-110 text-slate-900 text-xl' : ' hover:text-slate-900  '}`} onClick={() => { setMenu("contact") }}><Link to='/contact'> Contact Us</Link></li>
           <li className={`cursor-pointer ${menu === "about" ? 'scale-110 text-slate-900 text-xl' : ' hover:text-slate-900  '}`} onClick={() => { setMenu("about") }}><Link to='/about'> About Us</Link></li>
         </ul>
+        <form onSubmit={handleSearchSubmit} className="flex items-center space-x-2">
+          <input 
+            type="text"
+            value={searchQuery}
+            onChange={handleSearchChange}
+            placeholder="Search..."
+            className="px-4 py-2 border border-gray-300 rounded-full"
+          />
+          <button type="submit" className="px-4 py-2 bg-blue-500 text-white rounded-full">Search</button>
+        </form>
         <div className="flex items-center space-x-4 relative">
           <Link to='/login'><button className="px-6 py-2 bg-white  border-spacing-3 border-2 border-slate-300 rounded-3xl ">Login</button></Link>
           <Link to='/cart'><img src={cart_icon} alt="Cart" className="h-6" /></Link>

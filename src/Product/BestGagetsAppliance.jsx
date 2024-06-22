@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import { HeadphoneDealsContext } from '../../context/HeadphoneContext';
+import { HeadphoneDealsContext } from '../context/HeadphoneContext';
 import { IoIosArrowForward } from "react-icons/io";
 
-const Discount = () => {
+const BestGadgetsAppliance = () => {
     const headphoneDeals = useContext(HeadphoneDealsContext);
     const items = headphoneDeals.slice(0, 4);
 
@@ -12,7 +12,7 @@ const Discount = () => {
                 <div className="absolute right-0 bottom-0 mr-4 mb-4">
                     <IoIosArrowForward className="text-white w-6 h-6 bg-blue-600 rounded-full p-1" />
                 </div>
-                <p className='font-normal text-2xl pb-4 pl-4'>Discounts for you</p>
+                <p className='font-normal text-2xl pb-4 pl-4'>Best Gadgets & Appliances</p>
             </div>
             <div className="grid grid-cols-2 grid-rows-2 gap-2 mb-8">
                 {items.map((deal, index) => (
@@ -29,4 +29,4 @@ const Discount = () => {
     );
 }
 
-export default Discount;
+export default BestGadgetsAppliance;

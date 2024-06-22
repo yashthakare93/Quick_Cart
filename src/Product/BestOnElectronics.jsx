@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { HeadphoneDealsContext } from '../../context/HeadphoneContext';
+import { HeadphoneDealsContext } from '../context/HeadphoneContext';
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 
 const BestOnElectronics = () => {

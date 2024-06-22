@@ -1,11 +1,14 @@
-import React from 'react'
+import React from 'react';
+import Products from '../Product/Products';
+import Sidebar from '../components/Sidebar/Sidebar';
 
 const Product = () => {
   return (
-    <div>
-      
+    <div className="flex">
+      <Sidebar />
+      <Products />
     </div>
-  )
+  );
 }
 
-export default Product
+export default Product;

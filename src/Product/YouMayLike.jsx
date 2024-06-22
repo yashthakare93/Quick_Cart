@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { HeadphoneDealsContext } from '../../context/HeadphoneContext';
+import { HeadphoneDealsContext } from '../context/HeadphoneContext';
 import { IoIosArrowForward } from 'react-icons/io';
 
 const YouMayLike = () => {
