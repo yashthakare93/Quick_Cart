@@ -1,6 +1,6 @@
 
 import React, { createContext } from 'react';
-import mobileDeals from '../Data/mobile';
+import mobileDeals from '../Data/electronics';
 
 export const MobileDealsContext = createContext();
 

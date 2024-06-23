@@ -1,12 +1,12 @@
 
 import React, { createContext } from 'react';
-import headphonesDeals from '../Data/headphone';
+import headphone from '../Products/data/headphone';
 
 export const HeadphoneDealsContext = createContext();
 
 export const HeadphoneDealsProvider = ({ children }) => {
   return (
-    <HeadphoneDealsContext.Provider value={headphonesDeals}>
+    <HeadphoneDealsContext.Provider value={headphone}>
       {children}
     </HeadphoneDealsContext.Provider>
   );

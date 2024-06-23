@@ -46,7 +46,7 @@ const HeadphoneDeals = () => {
                             <h3 className="mt-4 text-sm">{product.name}</h3>
                             <div className="mt-2 flex justify-center">
                                 <span className="text-md font-bold flex">
-                                    <p className="font-sm pr-1">Just for </p>{product.new_price.toFixed(2)}
+                                    <p className="font-sm pr-1">Just for </p>{product.new_price}
                                 </span>
                             </div>
                         </div>
