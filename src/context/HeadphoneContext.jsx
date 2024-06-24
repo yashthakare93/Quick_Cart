@@ -1,6 +1,6 @@
 
 import React, { createContext } from 'react';
-import headphoneData from '../Products/ProductData/headphoneData';
+import headphoneData from '../Products/ProductData/allData';
 
 export const HeadphoneDealsContext = createContext();
 

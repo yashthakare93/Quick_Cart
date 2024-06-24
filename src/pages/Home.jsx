@@ -15,7 +15,7 @@ import Navbar from '../components/Navbar/Navbar'
 
 const Shop = () => {
   return (
-    <div>
+    <div className='px-6'>
       <Navbar/>
       <Hero />
       <MobileDealsProvider>
@@ -31,12 +31,8 @@ const Shop = () => {
       <BestFashionDealsProvider>
       <BestFashionDeals/>
       </BestFashionDealsProvider>
-   
       <Categories />
-
       <Newsletter />
-
-
     </div>
   )
 }

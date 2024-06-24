@@ -2,6 +2,7 @@
 import React, { useContext } from 'react';
 import { FilterContext } from '../context/FilterContext';
 import Card from './Card';
+import { Link } from 'react-router-dom';
 
 const CardGrid = ({ data, selectedCategory }) => {
   const { selectedColor } = useContext(FilterContext);
@@ -17,8 +18,9 @@ const CardGrid = ({ data, selectedCategory }) => {
     <div className="grid grid-cols-4 gap-4 p-4">
       {filteredData.map((product, index) => (
         <div key={index}>
+          <Link to={`/products/${product.id}`}>
           <Card
-            img={product.img}
+            img={product.imgs && product.imgs.length > 0 ? product.imgs[0] : 'fallback-image-url'} 
             title={product.title}
             star={product.star}
             reviews={product.reviews}
@@ -27,7 +29,7 @@ const CardGrid = ({ data, selectedCategory }) => {
             company={product.company}
             color={product.color}
             category={product.subcategory}
-          />
+          /></Link>
         </div>
       ))}
     </div>
