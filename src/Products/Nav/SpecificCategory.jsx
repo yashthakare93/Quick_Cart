@@ -1,25 +1,14 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import CategoryPage from './CategoryPage';
-import all from '../data/all';
-import footwear from '../data/footwears';
-import headphone from '../data/headphone';
+import allData from '../ProductData/allData';
 
-const SpecificCategory = ({ selectedCategory }) => {
-  let data;
+const SpecificCategory = () => {
+  const location = useLocation();
+  const params = new URLSearchParams(location.search);
+  const selectedCategory = params.get('category') || 'All'; // Default to 'All'
 
-  switch (selectedCategory.toLowerCase()) {
-    case 'footwear':
-      data = footwear;
-      break;
-    case 'headphones':
-      data = headphone;
-      break;
-    default:
-      data = all;
-      break;
-  }
-
-  return <CategoryPage selectedCategory={selectedCategory} data={data} />;
+  return <CategoryPage selectedCategory={selectedCategory} data={allData} />;
 };
 
 export default SpecificCategory;

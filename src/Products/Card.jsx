@@ -3,9 +3,12 @@ import React from 'react';
 const Card = ({ img, title, star, reviews, prevPrice, newPrice, company, color, category }) => {
   return (
     <div className="max-w-sm overflow-hidden p-4 bg-white border-2 border-gray-100">
-      <img className="w-full h-36" src={img} alt={title} />
+      <img className="w-full h-40" src={img} alt={title} />
       <div className="px-6 py-4">
-        <div className="font-bold text-xl mb-2">{title}</div>
+        <div className="font-semibold text-md mb-2" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+          {title}
+        </div>
+
         <div className="flex items-center" style={{ color: 'gold' }}>
           {star}
           <span className="ml-1">{reviews}</span>

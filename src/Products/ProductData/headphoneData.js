@@ -1,6 +1,6 @@
 import { AiFillStar } from "react-icons/ai";
 
-const headphone = [
+const headphoneData = [
   {
     img: 'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTpuzti6a2yqNPAvfFwNn64mRzQUqE0YIjWuH9c5BfwcodoZY41CQjlwCbNFZHSBZHSjp_VkX8OKKd_V6ng9Vd_zaUu4wYGyR01LxFL__ZP5ckT3TSMrUI9',
     title: 'Noise two Wireless',
@@ -117,4 +117,4 @@ const headphone = [
   },
 ];
 
-export default headphone
+export default headphoneData

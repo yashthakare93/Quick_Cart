@@ -1,21 +1,25 @@
 import React from 'react';
+import { FilterProvider } from '../../context/FilterContext';
 import CardGrid from '../CardGrid';
 import Sidebar from '../Sidebar/Sidebar';
-import { FilterProvider } from '../../context/FilterContext';
-import all from '../data/all';
-import footwear from '../data/footwears';
-import headphone from '../data/headphone';
 
-const categoryData = {
-  All: all,
-  Footwear: footwear,
-  Headphones: headphone,
-  // Add other categories as needed
+const shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
 };
 
-const CategoryPage = ({ selectedCategory }) => {
-  // Select the correct data set based on selectedCategory
-  const dataToRender = categoryData[selectedCategory] || all;
+const CategoryPage = ({ selectedCategory, data }) => {
+  let dataToRender = data; // Start with all data
+
+  if (selectedCategory.toLowerCase() !== 'all') {
+    dataToRender = data.filter(item => item.category.toLowerCase() === selectedCategory.toLowerCase());
+  }
+
+  // Shuffle data if needed
+  dataToRender = shuffleArray(dataToRender);
 
   return (
     <FilterProvider>

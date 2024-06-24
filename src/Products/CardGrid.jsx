@@ -26,7 +26,7 @@ const CardGrid = ({ data, selectedCategory }) => {
             newPrice={product.newPrice}
             company={product.company}
             color={product.color}
-            category={product.category}
+            category={product.subcategory}
           />
         </div>
       ))}

@@ -1,6 +1,6 @@
 import {  AiFillStar  } from "react-icons/ai";
 
-const footwears = [
+const footwearData = [
   {
     img: "https://m.media-amazon.com/images/I/6125yAfsJKL._AC_UX575_.jpg",
     title: "Nike Air Monarch IV",
@@ -505,4 +505,4 @@ const footwears = [
   },
 ];
 
-export default footwears;
+export default footwearData;

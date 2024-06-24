@@ -1,12 +1,16 @@
-// CategoryLink.js
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const CategoryLink = ({ category, selectedCategory, onClick }) => {
+  const location = useLocation();
+
   return (
     <li>
       <Link
-        to={`#${category.toLowerCase()}`} // Use hash link for demo purpose
+        to={{
+          pathname: location.pathname,
+          search: `?category=${category.toLowerCase()}`,
+        }}
         className={`text-white ${selectedCategory === category ? 'font-bold' : ''}`}
         onClick={() => onClick(category)}
       >
