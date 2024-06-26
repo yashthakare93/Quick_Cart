@@ -15,7 +15,7 @@ const CardGrid = ({ data, selectedCategory }) => {
   });
 
   return (
-    <div className="grid grid-cols-4 gap-4 p-4">
+    <div className="grid grid-cols-5 gap-1 p-4">
       {filteredData.map((product, index) => (
         <div key={index}>
           <Link to={`/products/${product.id}`}>
@@ -29,6 +29,8 @@ const CardGrid = ({ data, selectedCategory }) => {
             company={product.company}
             color={product.color}
             category={product.subcategory}
+            rating={product.rating}
+            imagesByColor={product.imagesByColor}
           /></Link>
         </div>
       ))}
