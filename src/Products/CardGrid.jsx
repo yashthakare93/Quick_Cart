@@ -31,6 +31,8 @@ const CardGrid = ({ data, selectedCategory }) => {
             category={product.subcategory}
             rating={product.rating}
             imagesByColor={product.imagesByColor}
+            discount={product.discount}
+            isQuickCartChoice={product.isQuickCartChoice}
           /></Link>
         </div>
       ))}

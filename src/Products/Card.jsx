@@ -3,7 +3,7 @@ import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { MdKeyboardArrowDown } from "react-icons/md";
 
 const Card = (props) => {
-  const { title, reviews, prevPrice, newPrice, company, rating, imagesByColor } = props;
+  const { title, reviews, prevPrice, newPrice, company, rating, imagesByColor, discount, isQuickCartChoice } = props;
 
   // Calculate the number of full and empty stars
   const fullStars = Math.floor(rating);
@@ -17,7 +17,12 @@ const Card = (props) => {
   const selectedImg = selectedColor ? imagesByColor[selectedColor][0] : null;
 
   return (
-    <div className="overflow-hidden p-4 gap-1 bg-white border-2 border-gray-100 rounded-lg w-62 h-96 flex flex-col justify-center">
+    <div className="relative overflow-hidden p-4 gap-1 bg-white border-2 border-gray-100 rounded-lg w-62 h-96 flex flex-col justify-center">
+      {isQuickCartChoice && (
+        <div className="absolute top-0 left-0 bg-black text-white text-xs font-semibold px-2 py-1 rounded">
+          QuickCart's <span className='text-orange-400'>Choice</span>
+        </div>
+      )}
       <div className="flex justify-center mb-4">
         <img className="h-32 w-full object-cover items-center" src={selectedImg} alt={title} />
       </div>
@@ -48,12 +53,20 @@ const Card = (props) => {
               <AiOutlineStar key={index} className='text-green-500' />
             ))}
           </div>
-          <MdKeyboardArrowDown/>
+          <MdKeyboardArrowDown />
           <span className="text-sm text-blue-500 ml-1">{reviews}</span>
         </div>
-        <div className="flex items-baseline">
-          <div className="text-red-500 line-through mr-2">₹{prevPrice}</div>
-          <div className="text-green-500 text-lg font-semibold">₹{newPrice}</div>
+        <div className="flex ">
+          <div className="text-2xl font-medium mr-1">₹{newPrice}</div>
+          {prevPrice && (
+            <div className="flex justify-center gap-1">
+              <div className='mr-1'>M.R.P:</div>
+              <div className='line-through'>₹{prevPrice}</div>
+              {discount && (
+                <div className=''>{discount}% off</div>
+              )}
+            </div>
+          )}      
         </div>
       </div>
     </div>
