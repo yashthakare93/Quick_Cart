@@ -1,17 +1,15 @@
-import React, { useContext } from 'react';
-import Price from '../Price/Price';
-import Color from '../Colors';
-import { FilterContext } from '../../context/FilterContext';
+import React from 'react';
+import ColorFilter from '../Filters/ColorFilter';
+import PriceFilter from '../Filters/PriceFilter';
 
 const Sidebar = () => {
-  const {setSelectedColor} = useContext(FilterContext);
   return (
     <div className="h-screen w-52 flex flex-col p-2 items-center">
-      <div className="flex-grow overflow-y-auto">
-        <Price/>
-        <Color  setSelectedColor={setSelectedColor}/>
-      </div>
+    <div className="flex-grow overflow-y-auto">
+      <PriceFilter />
+      <ColorFilter />
     </div>
+  </div>
   );
 }
 

@@ -1,41 +1,54 @@
-// CardGrid.js
 import React, { useContext } from 'react';
 import { FilterContext } from '../context/FilterContext';
-import Card from './Card';
+import Card from '../Products/Card';
 import { Link } from 'react-router-dom';
 
-const CardGrid = ({ data, selectedCategory }) => {
-  const { selectedColor } = useContext(FilterContext);
+const CardGrid = ({ data }) => {
+  const { selectedCategory, selectedColor, selectedPrice } = useContext(FilterContext);
 
-  // Filter data based on selected color and category
   const filteredData = data.filter(product => {
-    const matchColor = selectedColor === 'All' || product.color.toLowerCase() === selectedColor.toLowerCase();
-    const matchCategory = selectedCategory === 'All' || product.category.toLowerCase() === selectedCategory.toLowerCase();
-    return matchColor && matchCategory;
+    const matchColor = selectedColor === 'all' || product.colors.includes(selectedColor.toLowerCase());
+    const matchCategory = selectedCategory === 'All' || (product.category && product.category.toLowerCase() === selectedCategory.toLowerCase());
+    const matchPrice = selectedPrice === 'all' || (selectedPrice === 'below1000' && parseInt(product.newPrice.replace(',', '')) < 1000) ||
+      (selectedPrice === '<2000' && parseInt(product.newPrice.replace(',', '')) < 2000) ||
+      (selectedPrice === '<3000' && parseInt(product.newPrice.replace(',', '')) < 3000) ||
+      (selectedPrice === '<4000' && parseInt(product.newPrice.replace(',', '')) < 4000) ||
+      (selectedPrice === '<5000' && parseInt(product.newPrice.replace(',', '')) < 5000) ||
+      (selectedPrice === '>5000' && parseInt(product.newPrice.replace(',', '')) > 5000)
+
+    return matchColor && matchCategory && matchPrice;
   });
 
   return (
     <div className="grid grid-cols-5 gap-1 p-4">
-      {filteredData.map((product, index) => (
-        <div key={index}>
-          <Link to={`/products/${product.id}`}>
-          <Card
-            img={product.imgs && product.imgs.length > 0 ? product.imgs[0] : 'fallback-image-url'} 
-            title={product.title}
-            star={product.star}
-            reviews={product.reviews}
-            prevPrice={product.prevPrice}
-            newPrice={product.newPrice}
-            company={product.company}
-            color={product.color}
-            category={product.subcategory}
-            rating={product.rating}
-            imagesByColor={product.imagesByColor}
-            discount={product.discount}
-            isQuickCartChoice={product.isQuickCartChoice}
-          /></Link>
-        </div>
-      ))}
+      {filteredData.map((product, index) => {
+        const colorKey = selectedColor === 'all' ? product.colors[0].toLowerCase() : selectedColor.toLowerCase();
+        const productImage = product.imagesByColor[colorKey] && product.imagesByColor[colorKey][0]
+          ? product.imagesByColor[colorKey][0]
+          : product.imagesByColor[product.colors[0].toLowerCase()][0];
+
+        return (
+          <div key={index}>
+            <Link to={`/products/${product.id}`}>
+              <Card
+                img={productImage}
+                title={product.title}
+                star={product.star}
+                reviews={product.reviews}
+                prevPrice={product.prevPrice}
+                newPrice={product.newPrice}
+                company={product.company}
+                color={product.colors}
+                category={product.subcategory}
+                rating={product.rating}
+                imagesByColor={product.imagesByColor}
+                discount={product.discount}
+                isQuickCartChoice={product.isQuickCartChoice}
+              />
+            </Link>
+          </div>
+        );
+      })}
     </div>
   );
 };

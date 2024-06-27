@@ -14,7 +14,9 @@ const Card = (props) => {
   const [selectedColor, setSelectedColor] = useState(defaultColor);
 
   // Get the first image of the selected color
-  const selectedImg = selectedColor ? imagesByColor[selectedColor][0] : null;
+  const selectedImg = selectedColor && imagesByColor[selectedColor] && imagesByColor[selectedColor][0]
+    ? imagesByColor[selectedColor][0]
+    : imagesByColor[defaultColor][0];
 
   return (
     <div className="relative overflow-hidden p-4 gap-1 bg-white border-2 border-gray-100 rounded-lg w-62 h-96 flex flex-col justify-center">
@@ -24,7 +26,11 @@ const Card = (props) => {
         </div>
       )}
       <div className="flex justify-center mb-4">
-        <img className="h-32 w-full object-cover items-center" src={selectedImg} alt={title} />
+        {selectedImg ? (
+          <img className="h-32 w-full object-cover items-center" src={selectedImg} alt={title} />
+        ) : (
+          <div className="h-32 w-full flex items-center justify-center text-gray-500">No Image Available</div>
+        )}
       </div>
 
       <div className="px-1 flex flex-col items-center">
