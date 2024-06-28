@@ -4,21 +4,30 @@ import Card from '../Products/Card';
 import { Link } from 'react-router-dom';
 
 const CardGrid = ({ data }) => {
-  const { selectedCategory, selectedColor, selectedPrice } = useContext(FilterContext);
+  const { selectedCategory, selectedColor, selectedPrice , selectedDiscount } = useContext(FilterContext);
 
   const filteredData = data.filter(product => {
     const matchColor = selectedColor === 'all' || product.colors.includes(selectedColor.toLowerCase());
     const matchCategory = selectedCategory === 'All' || (product.category && product.category.toLowerCase() === selectedCategory.toLowerCase());
-    const matchPrice = selectedPrice === 'all' || (
+    const matchPrice = selectedPrice === '' || (
       (selectedPrice === 'under1000' && parseInt(product.newPrice.replace(',', '')) < 1000) ||
       (selectedPrice === '1000-5000' && parseInt(product.newPrice.replace(',', '')) >= 1000 && parseInt(product.newPrice.replace(',', '')) <= 5000) ||
       (selectedPrice === '5000-10000' && parseInt(product.newPrice.replace(',', '')) >= 5000 && parseInt(product.newPrice.replace(',', '')) <= 10000) ||
       (selectedPrice === '10000-20000' && parseInt(product.newPrice.replace(',', '')) >= 10000 && parseInt(product.newPrice.replace(',', '')) <= 20000) ||
       (selectedPrice === 'over20000' && parseInt(product.newPrice.replace(',', '')) > 20000)
     );
+    const matchDiscount = selectedDiscount === '' || (
+      (selectedDiscount === '10' && product.discount >= 10) ||
+      (selectedDiscount === '20' && product.discount >= 20) ||
+      (selectedDiscount === '30' && product.discount >= 30) ||
+      (selectedDiscount === '40' && product.discount >= 40) ||
+      (selectedDiscount === '50' && product.discount >= 50) ||
+      (selectedDiscount === '60' && product.discount >= 60)
+    );
 
 
-    return matchColor && matchCategory && matchPrice;
+
+    return matchColor && matchCategory && matchPrice && matchDiscount;
   });
 
   return (

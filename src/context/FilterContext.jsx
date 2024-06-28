@@ -5,7 +5,8 @@ export const FilterContext = createContext();
 export const FilterProvider = ({ children }) => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedColor, setSelectedColor] = useState('all');
-  const [selectedPrice, setSelectedPrice] = useState('all');
+  const [selectedPrice, setSelectedPrice] = useState('');
+  const [selectedDiscount,setSelectedDiscount] = useState('');
 
   const handleSelectCategory = (category) => {
     setSelectedCategory(category);
@@ -19,6 +20,10 @@ export const FilterProvider = ({ children }) => {
     setSelectedPrice(price);
   };
 
+  const handleSelectDiscount = (discount) => {
+    setSelectedDiscount(discount);
+  };
+
   return (
     <FilterContext.Provider
       value={{
@@ -28,6 +33,8 @@ export const FilterProvider = ({ children }) => {
         handleSelectColor,
         selectedPrice,
         handleSelectPrice,
+        selectedDiscount,
+        handleSelectDiscount
       }}
     >
       {children}

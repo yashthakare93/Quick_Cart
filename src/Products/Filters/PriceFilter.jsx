@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import { FilterContext } from '../../context/FilterContext';
 
 const prices = [
-  { label: 'All', value: 'all' },
   { label: 'Under ₹1,000', value: 'under1000' },
   { label: '₹1,000 - ₹5,000', value: '1000-5000' },
   { label: '₹5,000 - ₹10,000', value: '5000-10000' },
