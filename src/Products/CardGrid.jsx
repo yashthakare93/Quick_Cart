@@ -9,12 +9,14 @@ const CardGrid = ({ data }) => {
   const filteredData = data.filter(product => {
     const matchColor = selectedColor === 'all' || product.colors.includes(selectedColor.toLowerCase());
     const matchCategory = selectedCategory === 'All' || (product.category && product.category.toLowerCase() === selectedCategory.toLowerCase());
-    const matchPrice = selectedPrice === 'all' || (selectedPrice === 'below1000' && parseInt(product.newPrice.replace(',', '')) < 1000) ||
-      (selectedPrice === '<2000' && parseInt(product.newPrice.replace(',', '')) < 2000) ||
-      (selectedPrice === '<3000' && parseInt(product.newPrice.replace(',', '')) < 3000) ||
-      (selectedPrice === '<4000' && parseInt(product.newPrice.replace(',', '')) < 4000) ||
-      (selectedPrice === '<5000' && parseInt(product.newPrice.replace(',', '')) < 5000) ||
-      (selectedPrice === '>5000' && parseInt(product.newPrice.replace(',', '')) > 5000)
+    const matchPrice = selectedPrice === 'all' || (
+      (selectedPrice === 'under1000' && parseInt(product.newPrice.replace(',', '')) < 1000) ||
+      (selectedPrice === '1000-5000' && parseInt(product.newPrice.replace(',', '')) >= 1000 && parseInt(product.newPrice.replace(',', '')) <= 5000) ||
+      (selectedPrice === '5000-10000' && parseInt(product.newPrice.replace(',', '')) >= 5000 && parseInt(product.newPrice.replace(',', '')) <= 10000) ||
+      (selectedPrice === '10000-20000' && parseInt(product.newPrice.replace(',', '')) >= 10000 && parseInt(product.newPrice.replace(',', '')) <= 20000) ||
+      (selectedPrice === 'over20000' && parseInt(product.newPrice.replace(',', '')) > 20000)
+    );
+
 
     return matchColor && matchCategory && matchPrice;
   });

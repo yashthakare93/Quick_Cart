@@ -103,7 +103,7 @@ const allData = [
         id: 4,
         title: "Adidas Men Advantage Base Casual Sneakers",
         reviews: "25",
-        newPrice: "3600",
+        newPrice: "30600",
         company: "adidas",
         subcategory: "sneakers",
         category: "footwears",

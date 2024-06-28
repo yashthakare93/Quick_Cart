@@ -5,8 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {
-      spacing: {
-        'custom-32': '3rem', 
+      colors: {
+        golden: {
+          500: '#FFD700', 
+        },
       },
     },
   },

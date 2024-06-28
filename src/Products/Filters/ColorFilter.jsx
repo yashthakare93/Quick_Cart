@@ -26,10 +26,10 @@ const ColorFilter = () => {
             onClick={() => handleSelectColor(color.name.toLowerCase())}
           >
             {color.name === 'All' ? (
-              <img src={color.imageUrl} alt="All" className="w-10 h-10 object-cover border border-gray-300" />
+              <img src={color.imageUrl} alt="All" className="w-8 h-8 object-cover border border-gray-300" />
             ) : (
               <div
-                className={`w-10 h-10 inline-block border border-gray-300 ${selectedColor === color.name.toLowerCase() ? 'border-transparent' : 'bg-white'}`}
+                className={`w-8 h-8 inline-block border border-gray-300 ${selectedColor === color.name.toLowerCase() ? 'border-transparent' : 'bg-white'}`}
                 style={{ backgroundColor: color.color }}
               />
             )}
