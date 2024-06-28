@@ -99,27 +99,7 @@ const allData = [
         },
         isQuickCartChoice: false
     },
-    {
-        id: 4,
-        title: "Adidas Men Advantage Base Casual Sneakers",
-        reviews: "25",
-        newPrice: "30600",
-        company: "adidas",
-        subcategory: "sneakers",
-        category: "footwears",
-        rating: '4.0',
-        availableSizes: ["6", "12"],
-        colors: ["gray"],
-        imagesByColor: {
-            gray: [
-                "https://m.media-amazon.com/images/I/71IXQVBLekL._SX695_.jpg",
-                "https://m.media-amazon.com/images/I/71JJDMOjygL._SX695_.jpg",
-                "https://m.media-amazon.com/images/I/71c5kWgeYYL._SX695_.jpg",
-                "https://m.media-amazon.com/images/I/718XqmPxzDL._SX695_.jpg",
-            ]
-        },
-        isQuickCartChoice: false
-    }
+    
 ];
 
 

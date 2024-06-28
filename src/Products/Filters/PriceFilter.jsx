@@ -15,7 +15,7 @@ const PriceFilter = () => {
   return (
     <div className="mt-4">
       <h3 className="text-lg font-semibold text-gray-800 mb-2">Price</h3>
-      <ul className="flex flex-col space-y-1 font-medium text-gray-500 text-base">
+      <ul className="flex flex-col space-y-1 ">
         {prices.map(price => (
           <li
             key={price.value}

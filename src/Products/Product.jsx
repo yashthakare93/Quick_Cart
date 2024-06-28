@@ -11,12 +11,10 @@ const Product = () => {
   };
 
   return (
-    <div className="">
-      <Navbar />
+    <div >
+      <div className='hidden lg:block'><Navbar /></div>
       <CategoryNav onSelectCategory={handleSelectCategory} />
-      <div className="flex-grow p-4">
-        <SpecificCategory selectedCategory={selectedCategory} />
-      </div>
+      <SpecificCategory selectedCategory={selectedCategory} />
     </div>
   );
 };

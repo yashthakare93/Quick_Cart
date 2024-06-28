@@ -6,7 +6,7 @@ import Cart from './pages/Cart';
 import LoginSignup from './pages/LoginSignup';
 import Contact from './pages/Contact';
 import About from './pages/About';
-import Footer from './components/Footer/Footer';
+// import Footer from './components/Footer/Footer';
 import ProductDetails from './Products/ProductDetails/ProductDetail';
 
 
@@ -25,7 +25,7 @@ function App() {
           <Route path='/login' element={<LoginSignup />} />
         </Routes>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </BrowserRouter>
   </div>
   );

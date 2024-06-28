@@ -1,43 +1,35 @@
 import React, { useState } from 'react';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
-import { MdKeyboardArrowDown } from "react-icons/md";
+import { MdKeyboardArrowDown } from 'react-icons/md';
 
 const Card = (props) => {
-  const { title, reviews, prevPrice, newPrice, company, rating, imagesByColor, discount, isQuickCartChoice } = props;
+  const { title, reviews, prevPrice, newPrice, company, rating, imagesByColor, discount } = props;
 
-  // Calculate the number of full and empty stars
   const fullStars = Math.floor(rating);
   const emptyStars = 5 - fullStars;
 
-  // Get the first color by default
   const defaultColor = imagesByColor ? Object.keys(imagesByColor)[0] : null;
   const [selectedColor, setSelectedColor] = useState(defaultColor);
 
-  // Get the first image of the selected color
   const selectedImg = selectedColor && imagesByColor[selectedColor] && imagesByColor[selectedColor][0]
     ? imagesByColor[selectedColor][0]
     : imagesByColor[defaultColor][0];
 
   return (
-    <div className="relative overflow-hidden p-4 gap-1 bg-white border-2 border-gray-100 rounded-lg w-62 h-96 flex flex-col justify-center">
-      {isQuickCartChoice && (
-        <div className="absolute top-0 left-0 bg-black text-white text-xs font-semibold px-2 py-1 rounded">
-          QuickCart's <span className='text-orange-400'>Choice</span>
-        </div>
-      )}
-      <div className="flex justify-center mb-4">
+    <div className="lg:p-4 sm:p-2 bg-white border border-gray-100 justify-center lg:h-auto">
+      <div className="h-48 justify-center lg:h-44 overflow-hidden">
         {selectedImg ? (
-          <img className="h-32 w-full object-cover items-center" src={selectedImg} alt={title} />
+          <img src={selectedImg} alt={title} />
         ) : (
-          <div className="h-32 w-full flex items-center justify-center text-gray-500">No Image Available</div>
+          <div className="w-full flex items-center justify-center text-gray-500 h-full">No Image Available</div>
         )}
       </div>
 
       <div className="px-1 flex flex-col items-center">
-        <div className='flex'>
-          <div className="font-semibold text-lg mr-3 text-center">{company}</div>
+        <div className='flex flex-col sm:flex-row'>
+          <div className="font-semibold text-lg sm:text-base mr-3 text-center">{company}</div>
           {imagesByColor && (
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 mt-2 sm:mt-0">
               {Object.keys(imagesByColor).map((colorKey, index) => (
                 <div
                   key={index}
@@ -49,9 +41,9 @@ const Card = (props) => {
             </div>
           )}
         </div>
-        <div className="font-medium mb-2 text-center">{title}</div>
+        <div className="font-medium mb-2 text-center text-lg sm:text-base">{title}</div>
         <div className="flex items-center mb-2 text-center">
-          <div className="flex items-center gap-1">
+          <div className="flex gap-1">
             {Array.from({ length: fullStars }).map((_, index) => (
               <AiFillStar key={index} className='text-green-500' />
             ))}
@@ -62,17 +54,19 @@ const Card = (props) => {
           <MdKeyboardArrowDown />
           <span className="text-sm text-blue-500 ml-1">{reviews}</span>
         </div>
-        <div className="flex ">
-          <div className="text-2xl font-medium mr-1">₹{newPrice}</div>
+        <div className="flex flex-col sm:flex-row sm:items-center">
+          <div className="text-2xl sm:text-xl font-medium mr-1">₹{newPrice}</div>
           {prevPrice && (
-            <div className="flex justify-center gap-1">
-              <div className='mr-1'>M.R.P:</div>
-              <div className='line-through'>₹{prevPrice}</div>
-              {discount && (
+            <div className='flex justify-center items-center gap-1 text-sm sm:text-base'>
+              <div className="flex ">
+                <div className='mr-1'>M.R.P:</div>
+                <div className='line-through'>₹{prevPrice}</div>
+              </div>
+              <div>{discount && (
                 <div className=''>{discount}% off</div>
-              )}
+              )}</div>
             </div>
-          )}      
+          )}
         </div>
       </div>
     </div>
