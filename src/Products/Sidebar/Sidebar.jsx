@@ -4,7 +4,7 @@ import PriceFilter from '../Filters/PriceFilter';
 
 const Sidebar = () => {
   return (
-    <div className="h-screen w-52 flex flex-col p-2 items-center">
+    <div className="h-screen w-44 flex flex-col px-4 ">
     <div className="flex-grow overflow-y-auto">
       <PriceFilter />
       <ColorFilter />
