@@ -16,6 +16,7 @@ const CategoryPage = ({ selectedCategory, data }) => {
   return (
     <FilterProvider>
       <div className="flex flex-col lg:flex-row">
+  
         {/* Sidebar section for larger devices */}
         <div className="hidden lg:block lg:pt-4 lg:pr-4">
           <Sidebar selectedCategory={selectedCategory} />
@@ -24,6 +25,7 @@ const CategoryPage = ({ selectedCategory, data }) => {
         {/* Main content section */}
         <div className="flex-grow lg:p-4 pb-20"> {/* Add padding bottom here */}
           {/* CardGrid component */}
+         
           <CardGrid data={dataToRender} selectedCategory={selectedCategory} />
         </div>
 

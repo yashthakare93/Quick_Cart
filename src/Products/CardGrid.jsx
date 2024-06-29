@@ -30,6 +30,7 @@ const CardGrid = ({ data }) => {
 
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 lg:gap-2 sm:gap-0">
+
       {filteredData.map((product, index) => {
         const colorKey = selectedColor === 'all' ? product.colors[0].toLowerCase() : selectedColor.toLowerCase();
         const productImage = product.imagesByColor[colorKey] && product.imagesByColor[colorKey][0]

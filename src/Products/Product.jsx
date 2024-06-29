@@ -3,6 +3,7 @@ import CategoryNav from '../Products/Nav/CategoryNav';
 import SpecificCategory from '../Products/Nav/SpecificCategory';
 import Navbar from '../components/Navbar/Navbar';
 
+
 const Product = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
 
@@ -12,9 +13,14 @@ const Product = () => {
 
   return (
     <div >
-      <div className='hidden lg:block'><Navbar /></div>
+      <div className='hidden lg:block'><Navbar />
+      
+      </div>
+      
       <CategoryNav onSelectCategory={handleSelectCategory} />
+    
       <SpecificCategory selectedCategory={selectedCategory} />
+      
     </div>
   );
 };
